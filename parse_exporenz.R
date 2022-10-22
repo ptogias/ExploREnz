@@ -1,9 +1,10 @@
-parse_explorenz <- function(x){
+parse_explorenz <- function(file, x){
   
   library(xml2)
   library(dplyr)
+  library(data.table)
   
-  d <- xml_find_all(explorenz, "*")
+  d <- xml_find_all(file, "*")
   d1 <- xml_children(d)
   
   d2 = xml_children(d1[[x]])
