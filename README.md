@@ -10,7 +10,7 @@ library(xml2)
 explorenz <- xml2::read_xml("enzyme-data.xml")
 
 # Apply function
-res <- pbapply::pblapply(c(2,4,6,8,10,12), function(x) lapply(x, parse_explorenz), file = explorenz)
+res <- pbapply::pblapply(c(2,4,6,8,10,12), function(x) lapply(x, parse_explorenz, file = explorenz))
 
 # List of lists to list of data.tables
 # TODO: Do this inside the function
