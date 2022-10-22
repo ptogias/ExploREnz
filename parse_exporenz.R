@@ -7,8 +7,8 @@ parse_explorenz <- function(file, x){
   d <- xml_find_all(file, "*")
   d1 <- xml_children(d)
   
-  d2 = xml_children(d1[[x]])
-  size = xml_length(d2)
+  d2 <- xml_children(d1[[x]])
+  size <- xml_length(d2)
   
   
   xml2::xml_contents(d2[[1]]) %>% 
