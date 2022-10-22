@@ -23,3 +23,7 @@ for (i in 1:length(res)) {
 # Write tables in an excel file
 openxlsx::write.xlsx(res, "explorenz.xlsx")
 ```
+
+References
+
+[1] McDonald, A.G., Boyce, S. and Tipton, K.F. ExplorEnz: the primary source of the IUBMB enzyme list. Nucleic Acids Res. 37, D593–D597 (2009). [DOI: 10.1093/nar/gkn582]
