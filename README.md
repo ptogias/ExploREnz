@@ -1,5 +1,5 @@
 # ExploREnz
-Function to parse the XML formatted SQL dump provided by the official ExplorEnz website (https://www.enzyme-database.org) using R.
+Function to parse the XML formatted SQL dump provided by the official ExplorEnz website (https://www.enzyme-database.org) and extracting respective tables locally using R.
 
 The provided XML contains 12 main elements - 6 containing data (even positions; 2,4,6,etc.) and 6 describing respective structures (odd possitions; 1,3,5,etc.). 
 
@@ -14,7 +14,7 @@ To install them you can run
 install.packages(c("dplyr", "data.table", "xml2"))
 ```
 
-Hot to run
+How to run
 
 ```
 library(xml2)
