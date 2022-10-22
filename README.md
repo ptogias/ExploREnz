@@ -1,7 +1,7 @@
 # ExploREnz
 Function to parse the XML formatted SQL dump provided by the official ExplorEnz website (https://www.enzyme-database.org)
 
-The provided XML contains 12 main elements - 6 containing data (even positions; 2;4;6,etc.) and 6 describing respective structures (odd possitions; 1,3,5,etc.). 
+The provided XML contains 12 main elements - 6 containing data (even positions; 2,4,6,etc.) and 6 describing respective structures (odd possitions; 1,3,5,etc.). 
 
 Hot to run
 
