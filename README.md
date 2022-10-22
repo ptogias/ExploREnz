@@ -1,5 +1,5 @@
 # ExploREnz
-Function to parse the XML formatted SQL dump provided by the official ExplorEnz website
+Function to parse the XML formatted SQL dump provided by the official ExplorEnz website (https://www.enzyme-database.org)
 
 Hot to run
 
