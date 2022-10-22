@@ -7,15 +7,16 @@ Hot to run
 
 ```
 library(xml2)
+library(pbapply)
 
 # Download zipped XML locally
 download_xml("https://www.enzyme-database.org/downloads/enzyme-data.xml.gz", quiet = FALSE)
 
 # Unzip and parse
-explorenz <- xml2::read_xml("enzyme-data.xml.gz")
+explorenz <- read_xml("enzyme-data.xml.gz")
 
 # Apply function - Export all tables (even positions)
-res <- pbapply::pbsapply(c(2,4,6,8,10,12), function(x) lapply(x, parse_explorenz, file = explorenz))
+res <- pbsapply(c(2,4,6,8,10,12), function(x) lapply(x, parse_explorenz, file = explorenz))
 
 # Write tables in an excel file
 openxlsx::write.xlsx(res, "explorenz.xlsx")
