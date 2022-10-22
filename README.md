@@ -1,24 +1,21 @@
 # ExploREnz
 Function to parse the XML formatted SQL dump provided by the official ExplorEnz website (https://www.enzyme-database.org)
 
+The provided XML contains 12 main elements - 6 containing data (even positions; 2;4;6,etc.) and 6 describing respective structures (odd possitions; 1,3,5,etc.). 
+
 Hot to run
 
 ```
 library(xml2)
 
-# Parse XML
-explorenz <- xml2::read_xml("enzyme-data.xml")
+# Download zipped XML locally
+download_xml("https://www.enzyme-database.org/downloads/enzyme-data.xml.gz", quiet = FALSE)
 
-# Apply function - Export all tables
-res <- pbapply::pblapply(c(2,4,6,8,10,12), function(x) lapply(x, parse_explorenz, file = explorenz))
+# Unzip and parse
+explorenz <- xml2::read_xml("enzyme-data.xml.gz")
 
-# List of lists to list of data.tables
-# TODO: Do this inside the function
-for (i in 1:length(res)) {
-  
-  res[i] <- unlist(res[i], recursive = FALSE)
-  
-}
+# Apply function - Export all tables (even positions)
+res <- pbapply::pbsapply(c(2,4,6,8,10,12), function(x) lapply(x, parse_explorenz, file = explorenz))
 
 # Write tables in an excel file
 openxlsx::write.xlsx(res, "explorenz.xlsx")
